@@ -1,0 +1,25 @@
+
+
+<div id="formulario" class="margenes">
+  <div class="row">
+    <h2>Bitácora de consultas</h2>
+  </div>
+  <div data-spy="scroll" class="container mt-5 limit-table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">TS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataBitacora">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.usuario }}</td>
+          <td>{{ item.hora }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

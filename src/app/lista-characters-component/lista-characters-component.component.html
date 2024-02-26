@@ -1,0 +1,14 @@
+<h2>Lista de personajes</h2>
+<ul class= charac>
+  <li *ngFor="let personaje of charList"
+    [class.selected]="personaje === character"
+    (click)="onSelect(personaje)">
+    <span class="badge">{{personaje.id}}</span> {{personaje.name}}
+
+  </li>
+
+</ul>
+
+<button class="card card-small" (click)="onBitacora()"  value =""  tabindex="0">
+  <span>Bitácora de consultas</span>
+</button>

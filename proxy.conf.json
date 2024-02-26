@@ -1,0 +1,7 @@
+{
+    "/restapi/*": {
+        "target": "http://localhost:8081",
+        "secure": true,
+        "logLevel": "debug"
+    }
+}

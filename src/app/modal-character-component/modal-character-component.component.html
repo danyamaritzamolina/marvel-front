@@ -1,0 +1,146 @@
+
+
+<div  id="miModal" >
+  <div class=" modal-xl" >
+      <div id="formulario" class="margenes ">
+        <div class="row">
+          <h1>Character Detail</h1>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <form>
+                <div class="mb-3 campos">
+                    <label for="charac-id" class="form-label">
+                        ID
+                    </label>
+                    <input id="charac-id"
+                    name="id"
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    disabled="true"
+                    value="{{characterData.id}}"
+                    required>
+                </div>
+                <div class="mb-3 campos">
+                    <label for="charac-name" class="form-label">
+                        NAME
+                    </label>
+                    <input id="charac-name"
+                    name="name"
+                    class="form-control"
+                    disabled="true"
+                    value="{{characterData.name}}"
+                    required/>
+                </div>
+                <div class="mb-3 campos">
+                    <label for="charac-desc" class="form-label">
+                        DESCRIPTION
+                    </label>
+                    <textarea id="charac-desc"
+                    name="desc"
+                    class="form-control"
+                    disabled="true"
+                    value="{{characterData.description}}"
+                    required></textarea>
+                </div>
+            </form>
+
+            <div class="mt-5">
+              <h2>Lista de comics</h2>
+              <form>
+                <div class="mb-6 campos">
+                    <label for="charac-id" class="form-label">
+                        AVAILABLE
+                    </label>
+                    <input id="charac-available"
+                    name="available"
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    disabled="true"
+                    value="{{characterData.comics.available}}"
+                    required>
+                </div>
+                <div class="mb-6 campos">
+                    <label for="charac-returned" class="form-label">
+                        RETURNED
+                    </label>
+                    <input id="charac-returned"
+                    name="returned"
+                    class="form-control"
+                    disabled="true"
+                    value="{{characterData.comics.returned}}"
+                    required/>
+                </div>
+                <div class="mb-6 campos">
+                    <label for="charac-col" class="form-label">
+                        COLLECTION URI
+                    </label>
+                    <textarea id="charac-col"
+                    name="collection"
+                    class="form-control"
+                    disabled="true"
+                    value="{{characterData.comics.collectionURI}}"
+                    required></textarea>
+                </div>
+              </form>
+            </div>
+            <div id="" class="mt-5" >
+              <div class="row">
+                <h2>Comics</h2>
+              </div>
+              <div data-spy="scroll" class="container mt-5 limit-table">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="col-3">Nombre</th>
+                      <th scope="col" class="col-3">Resource URI</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of characterData.comics.items">
+                      <th scope="row" class="col-3">{{ item.name }} </th>
+                      <td class="col-3">{{ item.resourceURI }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 mt-5">
+            <div class="">
+              <h2>Imagen</h2>
+              <img [src]="characterData.thumbnail.path +'.'+ characterData.thumbnail.extension" alt="Imagen Marvel" width="100vw"
+              height="100vh">
+            </div>
+            <div id="" class="mt-5">
+              <div class="row ">
+                <h2>Url</h2>
+              </div>
+              <div data-spy="scroll" class="container mt-5 limit-table">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="col-3">Tipo</th>
+                      <th scope="col" class="col-3">Url</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of characterData.urls">
+                      <th scope="row" class="col-3">{{ item.type }} </th>
+                      <td class="col-3">{{ item.url }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!--/div-->
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,11 @@
+.margenes {
+  margin: 30px;
+  height: 60vh;
+}
+.campos{
+  width: 20vw; height: 8vh;
+}
+.limit-table {
+  max-height: 50vh;
+  overflow-y: auto;
+}
