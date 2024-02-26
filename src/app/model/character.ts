@@ -1,4 +1,7 @@
 import { Imagen, List, Url } from './sub-model';
+/**
+ * Modelo para los datos de Character
+ */
 export interface Character {
     id: number;
     name: string;

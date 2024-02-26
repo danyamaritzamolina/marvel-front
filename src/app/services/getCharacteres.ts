@@ -5,7 +5,9 @@ import { Observable } from "rxjs";
 @Injectable({
     providedIn: 'root'
 })
-
+/**
+ * Servicio para definir los metodos de peticiones hacia el backend
+ */
 
 export class GetCharacteres {
 

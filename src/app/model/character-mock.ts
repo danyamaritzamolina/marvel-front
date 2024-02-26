@@ -1,5 +1,7 @@
 import { Character } from "./character";
-
+/**
+ * Ejemplo para inyeccion de datos
+ */
 export const CharacterList: Character[] = [
    /* { id: 11, name: 'Dr Nice', description: '' },
     { id: 12, name: 'Narco', description: ''  },

@@ -1,17 +1,14 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Character } from '../model/character';
-import { CharacterList } from '../model/character-mock';
 import { ModalCharacterComponentComponent } from '../modal-character-component/modal-character-component.component';
 import { ModalBitacoraComponent } from '../modal-bitacora/modal-bitacora.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatDialog } from '@angular/material/dialog';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { GetCharacteres } from '../services/getCharacteres';
-
+/**
+ * Pantalla principal para mostrar lista de personajes provenientes de la api externa
+ */
 
 @Component({
   selector: 'app-lista-characters-component',
@@ -32,13 +29,10 @@ export class ListaCharactersComponentComponent implements OnInit {
    }
   ngOnInit() {
     let timestamp = new Date().getTime();
-    console.log("TIMESTAMP",timestamp);
 
     this.getCharact.postBitacora(timestamp).subscribe((res) => {
-      console.log("BASE DE DATOS, REGISTRO CREADO", res);
     });
     this.getCharact.getAll(timestamp).subscribe((res) => {
-      console.log('Respuesta',res.data.results)
       this.charList= res.data.results;
     });
   }
@@ -56,7 +50,6 @@ export class ListaCharactersComponentComponent implements OnInit {
   }
 
   onBitacora(): void {
-    console.log("ABRIR MODAL BITACORA")
     const modalRef = this.modalService.open(ModalBitacoraComponent,{
       size:'lg'
     });
