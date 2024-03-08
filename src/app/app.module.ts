@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalBitacoraComponent } from './modal-bitacora/modal-bitacora.component';
+import { LoginUsuariosComponent } from './login-usuarios/login-usuarios.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ModalBitacoraComponent } from './modal-bitacora/modal-bitacora.componen
     AppComponent,
     ListaCharactersComponentComponent,
     ModalCharacterComponentComponent,
-    ModalBitacoraComponent
+    ModalBitacoraComponent,
+    LoginUsuariosComponent
   ],
   imports: [
     BrowserModule,

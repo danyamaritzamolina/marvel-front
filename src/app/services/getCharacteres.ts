@@ -15,12 +15,18 @@ export class GetCharacteres {
         private http:HttpClient
     ){
 
+
     }
+    headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ZGFueWE6MTIzNA=='
+    });
     /***
      * Metodo para consumir petición y obtener todos los registros
      */
     getAll(ts: number): Observable<any> {
-        return this.http.get('/restapi/getAll/'+ts);
+
+        return this.http.get('/restapi/getAll/'+ts, { headers: this.headers });
     }
     /**
      * Metodo para consumir character por id
@@ -28,7 +34,7 @@ export class GetCharacteres {
      * @returns
      */
     getById(param: number, ts: number): Observable<any> {
-        return this.http.get('/restapi/getById/'+param+"/"+ts);
+        return this.http.get('/restapi/getById/'+param+"/"+ts, { headers: this.headers });
     }
 
     /**
@@ -36,7 +42,7 @@ export class GetCharacteres {
      * @returns
      */
     getBitacora(): Observable<any> {
-      return this.http.get('/restapi/tabla');
+      return this.http.get('/restapi/tabla', { headers: this.headers });
     }
 
     /**
@@ -44,10 +50,7 @@ export class GetCharacteres {
      * @returns
      */
     postBitacora(ts: number): Observable<any> {
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json'
-      });
 
-      return this.http.post('/restapi/tabla',  "{\"hora\":\""+ts+"\"}", { headers: headers });
+      return this.http.post('/restapi/tabla',  "{\"hora\":\""+ts+"\"}", { headers: this.headers });
     }
 }
